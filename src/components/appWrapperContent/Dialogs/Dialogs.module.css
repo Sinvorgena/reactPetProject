@@ -1,0 +1,15 @@
+.content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "dl dt";
+
+    border-radius: 5px;
+}
+.dialogsItem{
+    grid-area: dl;
+    border-right: 1px solid #0E1116;
+}
+.MessagesField{
+    grid-area: dt;
+    position: relative;
+}

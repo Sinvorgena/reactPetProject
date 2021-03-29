@@ -1,0 +1,31 @@
+.content{
+    grid-area: fo;
+    box-shadow: 1px -1px 1px 1px #9E9EA9;
+    border-radius: 5px;
+    background-color: #F7F7F7;
+    display: grid;
+    grid-template-columns:  1fr  1fr  1fr;
+    grid-template-areas: "na co pe";
+
+    font-weight: 300;
+
+}
+.name{
+    grid-area: na;
+    text-align: center;
+    margin: auto;
+    letter-spacing: 1px;
+}
+.copyright{
+    grid-area: co;
+    text-align: center;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    margin: auto;
+}
+.pet{
+    grid-area: pe;
+    letter-spacing: 1px;
+    margin: auto;
+    text-align: center;
+}

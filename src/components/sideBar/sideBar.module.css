@@ -1,0 +1,25 @@
+.nav {
+    grid-area: n;
+    background-color: #F3E4E4;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px 1px #9E9EA9;
+    padding: 10px 0;
+}
+.nav a {
+    text-decoration: none;
+    font-weight: 300;
+    letter-spacing: 1px;
+    color: #374A67;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+.nav a.active{
+    box-shadow: 1px 1px 1px 1px #0E1116;
+    /*background-color: #9E7B9B;*/
+    /*color: white;*/
+    background-color: white;
+}
+.nav .box {
+    margin: 10px;
+}
+

@@ -1,0 +1,75 @@
+.newMessage{
+    display: grid;
+    margin: 0 auto;
+    width: 24%;
+    grid-template-columns: 1fr 60px;
+    grid-template-rows: 1fr;
+    grid-template-areas: "tf sn";
+    grid-gap: 5px;
+    position: fixed;
+    top: 89vh;
+}
+.textField{
+    resize: none;
+    overflow: hidden;
+    grid-area: tf;
+    max-height: 150px;
+    width: 100%;
+    min-height: 30px;
+    font-size: 18px;
+    background-color: #F3E4E4;
+    color: #374A67;
+    border: none;
+    box-shadow: 0 0 1px 1px #374A67;
+    border-radius: 5px;
+    padding: 5px;
+}
+.textField:focus{
+    outline: none;
+}
+.sendNewMessage{
+    width: 25px;
+    height: 25px;
+    grid-area: sn;
+    border: 3px solid #374A67;
+    border-right: none;
+    border-bottom: none;
+    background-color: transparent;
+    transform: rotate(135deg);
+    cursor: pointer;
+    margin: auto;
+    position: relative;
+    transition: all 1s;
+}
+.sendNewMessage:active{
+
+    top:2px;
+    transition: all 1s;
+}
+.sendNewMessage::before{
+    content: "";
+    width: 12px;
+    height: 12px;
+    border: 2px solid #374A67;
+    border-right: none;
+    border-bottom: none;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+
+}
+.sendNewMessage::after{
+    content: "";
+    width: 4px;
+    height: 4px;
+    border: 1px solid #374A67;
+    border-right: none;
+    border-bottom: none;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+
+}
+.sendNewMessage:focus{
+    outline: none;
+}

@@ -1,0 +1,48 @@
+.form{
+    grid-area: np;
+    display: grid;
+    grid-template-rows: 30px  3fr  1fr;
+    grid-template-columns: 150px 1fr 100px;
+    grid-template-areas:
+                         "la . ."
+                         "in in in"
+                         ". . se";
+    grid-gap: 20px;
+}
+.textField{
+    grid-area: in;
+    resize: none;
+    overflow: hidden;
+    max-height: 100px;
+    min-height: 60px;
+    font-size: 22px;
+    background-color: #F3E4E4;
+    color: #374A67;
+    border: none;
+    box-shadow: 0 0 1px 1px #374A67;
+    border-radius: 5px;
+    padding: 5px;
+}
+.textField:focus{
+    outline: none;
+}
+.textFieldLabel{
+    font-size: 28px;
+    grid-area: la;
+}
+.sendBtn{
+    grid-area: se;
+    border: none;
+    font-size: 24px;
+    color: #374A67;
+    border-radius: 10px;
+    background-color: #F3E4E4;
+    box-shadow: 0 1px 1px 1px #374A67;
+}
+.sendBtn:focus{
+    outline: none;
+}
+.sendBtn:active{
+    position: relative;
+    top: 3px;
+}

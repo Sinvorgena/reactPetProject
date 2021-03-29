@@ -1,0 +1,5 @@
+.wall{
+    grid-area: po;
+    display: grid;
+    grid-gap: 30px;
+}

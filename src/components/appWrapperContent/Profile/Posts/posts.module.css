@@ -1,0 +1,7 @@
+.content{
+    grid-area: pr;
+    display: grid;
+    grid-template-rows: 220px 3fr;
+    grid-template-areas: "np"
+                         "po";
+}

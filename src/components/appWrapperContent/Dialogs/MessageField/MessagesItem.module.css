@@ -1,0 +1,27 @@
+.content {
+    width: 100%;
+    border-radius: 5px;
+    padding: 10px 0;
+}
+.messageItem {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 50px 1fr;
+    grid-template-areas: "av me";
+    grid-gap: 10px;
+}
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    grid-area: av;
+}
+.avatar img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.message {
+    grid-area: me;
+    margin: auto 0 auto 0;
+}
