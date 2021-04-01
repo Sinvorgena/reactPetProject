@@ -1,9 +1,15 @@
 let follow = "FOLLOW"
 let unfollow = "UNFOLLOW"
 let setUsers = "SET_USERS"
-
+let setTotalUsersCount = "SET_TOTAL_USERS_COUNT"
+let setCurrentPage = "SET_CURRENT_PAGE"
+let toogleIsLoading = "TOOGLE_IS_LOADING"
 
 let UsersDefaulState = {
+    totalUsersCount: 0,
+    currentPage: 1,
+    numberOfUsersOnPage: 5,
+    isLoading: false,
     usersData: [
         // {
         //     id: 1,
@@ -17,27 +23,6 @@ let UsersDefaulState = {
         //     }
         // },
         // {
-        //     id: 2,
-        //     userAvatarUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0OKqoPKtc6zG0u7pS8C3klRQ-7n0KLvYTaQ&usqp=CAU",
-        //     followed: false,
-        //     fullname: "Dmitry K.",
-        //     status: "gmkdpfgmdpg",
-        //     location: {
-        //         country: "Belarus",
-        //         city: "Minsk"
-        //     }
-        // },
-        // {
-        //     id: 3,
-        //     userAvatarUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0OKqoPKtc6zG0u7pS8C3klRQ-7n0KLvYTaQ&usqp=CAU",
-        //     followed: true,
-        //     fullname: "Dmitry K.",
-        //     status: "gmkdpfgmdpg",
-        //     location: {
-        //         country: "Belarus",
-        //         city: "Minsk"
-        //     }
-        // }
     ]
 }
 
@@ -70,9 +55,27 @@ export const UsersReducer = (state = UsersDefaulState, action) => {
             return copyState
         case setUsers:
             copyState = {
-                ...state
+                ...state,
+                usersData: [...action.users]
             }
-            copyState.usersData = action.users.map(el=>el)
+            return copyState
+        case setTotalUsersCount:
+            copyState = {
+                ...state,
+                totalUsersCount: action.count
+            }
+            return copyState
+        case setCurrentPage:
+            copyState = {
+                ...state,
+                currentPage: action.currentPage
+            }
+            return copyState
+        case toogleIsLoading:
+            copyState = {
+                ...state,
+                isLoading: action.isLoading
+            }
             return copyState
         default:
             return state
@@ -91,7 +94,18 @@ export let setUsersAC = (users) => ({
     type: setUsers,
     users
 })
-
+export let setTotalUsersCountAC = (count) => ({
+    type: setTotalUsersCount,
+    count
+})
+export let setCurrentPageAC = (currentPage) => ({
+    type: setCurrentPage,
+    currentPage
+})
+export let toogleIsLoadingAC = (isLoading) => ({
+    type: toogleIsLoading,
+    isLoading
+})
 
 window.UsersDefaulState = UsersDefaulState
 

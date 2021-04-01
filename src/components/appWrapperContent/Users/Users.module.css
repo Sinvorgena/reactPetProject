@@ -9,21 +9,150 @@
     grid-template-rows: 0.05fr 0.90fr 0.05fr;
 
 }
-.ShowMbutton{
-    width: 15%;
-    color: white;
-    background-color: #9E7B9B;
-    margin: 0 auto;
+.paginnatorBox{
+    width: 30%;
+    margin: 0 auto 0 20%;
+    border: 2px solid #9E7B9B;
+    border-left: none;
+    border-right: none;
+    font-size: 12px;
+    display: grid;
+    border-radius: 2px;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "goLeft pages goRigth";
+}
+.goLeftPage{
+
+}
+.pagesBox{
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin: auto;
+}
+.goRigthPage{
+
+}
+.goRigthPage button,
+.goLeftPage button{
+    width: 50%;
+    height: 100%;
+    background: none;
     border: none;
     outline: none;
+
+}
+.goLeftPage .OneToLeft,
+.goRigthPage .OneToRigth,
+.goRigthPage .MaxToRigth,
+.goLeftPage .MaxToLeft{
+    transition: all 0.1s;
+    left: 0;
     position: relative;
-    top:0;
-    font-size: 20px;
+}
+.goLeftPage .OneToLeft:active{
+    left: -3%;
     transition: all 0.1s;
 }
-.ShowMbutton:active{
-    top: 3px;
+.goLeftPage .MaxToLeft:active{
+    left: -3%;
     transition: all 0.1s;
+}
+.goRigthPage .OneToRigth:active{
+    left: 3%;
+    transition: all 0.1s;
+}
+.goRigthPage .MaxToRigth:active{
+    left: 3%;
+    transition: all 0.1s;
+}
+
+.goLeftPage .OneToLeft::before,
+.goLeftPage .OneToLeft::after,
+.goRigthPage .OneToRigth::before,
+.goRigthPage .OneToRigth::after,
+.goRigthPage .MaxToRigth::before,
+.goRigthPage .MaxToRigth::after,
+.goLeftPage .MaxToLeft::before,
+.goLeftPage .MaxToLeft::after,
+.goRigthPage .MaxToRigth span::before,
+.goRigthPage .MaxToRigth span::after,
+.goLeftPage .MaxToLeft span::before,
+.goLeftPage .MaxToLeft span::after{
+    content: "";
+    background: #0E1116;
+    width: 30%;
+    height: 5%;
+    border-radius: 5px;
+    position: absolute;
+    top: 34%;
+    transform: rotate(-25deg);
+    left: 30%;
+}
+.goLeftPage .OneToLeft:hover,
+.goRigthPage .OneToRigth:hover,
+.goLeftPage .MaxToLeft:hover,
+.goRigthPage .MaxToRigth:hover{
+
+    border: 2px solid #9E7B9B;
+    border-top: none;
+    border-bottom: none;
+}
+.goLeftPage .OneToLeft:disabled:hover,
+.goRigthPage .OneToRigth:disabled:hover,
+.goLeftPage .MaxToLeft:disabled:hover,
+.goRigthPage .MaxToRigth:disabled:hover{
+    border: none;
+}
+.goLeftPage .OneToLeft::after,
+.goRigthPage .OneToRigth::after,
+.goRigthPage .MaxToRigth::after,
+.goRigthPage .MaxToRigth span::after,
+.goLeftPage .MaxToLeft::after,
+.goLeftPage .MaxToLeft span::after{
+    transform: rotate(25deg);
+    top: 56%;
+}
+.goLeftPage .OneToLeft::after,
+.goLeftPage .OneToLeft::before{
+    left: 40%;
+}
+.goRigthPage .OneToRigth::after,
+.goRigthPage .MaxToRigth::after,
+.goRigthPage .MaxToRigth span::after{
+    transform: rotate(-25deg);
+}
+.goRigthPage .OneToRigth::before,
+.goRigthPage .MaxToRigth::before,
+.goRigthPage .MaxToRigth span::before{
+    transform: rotate(25deg);
+}
+.goLeftPage .MaxToLeft::after,
+.goLeftPage .MaxToLeft::before{
+    left: 40%;
+}
+.goLeftPage .MaxToLeft span::after,
+.goLeftPage .MaxToLeft span::before{
+    left: 20%;
+}
+
+.goRigthPage .MaxToRigth span::before,
+.goRigthPage .MaxToRigth span::after{
+    left: 50%;
+}
+.MaxToRigth:disabled::before,
+.MaxToRigth:disabled::after,
+.MaxToRigth:disabled span::before,
+.MaxToRigth:disabled span::after,
+.MaxToLeft:disabled::before,
+.MaxToLeft:disabled::after,
+.MaxToLeft:disabled span::before,
+.MaxToLeft:disabled span::after,
+.OneToLeft:disabled::before,
+.OneToLeft:disabled::after,
+.OneToRigth:disabled::before,
+.OneToRigth:disabled::after{
+    background: gray;
 }
 .avatar{
     grid-area: avatar;
