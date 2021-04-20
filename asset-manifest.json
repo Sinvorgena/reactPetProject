@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/reactPetProject/static/css/main.06948247.chunk.css",
-    "main.js": "/reactPetProject/static/js/main.02cd7e23.chunk.js",
-    "main.js.map": "/reactPetProject/static/js/main.02cd7e23.chunk.js.map",
-    "runtime-main.js": "/reactPetProject/static/js/runtime-main.d900cea3.js",
-    "runtime-main.js.map": "/reactPetProject/static/js/runtime-main.d900cea3.js.map",
-    "static/js/2.452eeffe.chunk.js": "/reactPetProject/static/js/2.452eeffe.chunk.js",
-    "static/js/2.452eeffe.chunk.js.map": "/reactPetProject/static/js/2.452eeffe.chunk.js.map",
-    "static/js/3.706588c9.chunk.js": "/reactPetProject/static/js/3.706588c9.chunk.js",
-    "static/js/3.706588c9.chunk.js.map": "/reactPetProject/static/js/3.706588c9.chunk.js.map",
-    "index.html": "/reactPetProject/index.html",
-    "static/css/main.06948247.chunk.css.map": "/reactPetProject/static/css/main.06948247.chunk.css.map",
-    "static/js/2.452eeffe.chunk.js.LICENSE.txt": "/reactPetProject/static/js/2.452eeffe.chunk.js.LICENSE.txt",
-    "static/media/829.20951e82.gif": "/reactPetProject/static/media/829.20951e82.gif",
-    "static/media/profile-02-512.8bda664b.png": "/reactPetProject/static/media/profile-02-512.8bda664b.png"
+    "main.css": "/SocialMediaPetProject/static/css/main.06948247.chunk.css",
+    "main.js": "/SocialMediaPetProject/static/js/main.02cd7e23.chunk.js",
+    "main.js.map": "/SocialMediaPetProject/static/js/main.02cd7e23.chunk.js.map",
+    "runtime-main.js": "/SocialMediaPetProject/static/js/runtime-main.04aa4ec8.js",
+    "runtime-main.js.map": "/SocialMediaPetProject/static/js/runtime-main.04aa4ec8.js.map",
+    "static/js/2.452eeffe.chunk.js": "/SocialMediaPetProject/static/js/2.452eeffe.chunk.js",
+    "static/js/2.452eeffe.chunk.js.map": "/SocialMediaPetProject/static/js/2.452eeffe.chunk.js.map",
+    "static/js/3.706588c9.chunk.js": "/SocialMediaPetProject/static/js/3.706588c9.chunk.js",
+    "static/js/3.706588c9.chunk.js.map": "/SocialMediaPetProject/static/js/3.706588c9.chunk.js.map",
+    "index.html": "/SocialMediaPetProject/index.html",
+    "static/css/main.06948247.chunk.css.map": "/SocialMediaPetProject/static/css/main.06948247.chunk.css.map",
+    "static/js/2.452eeffe.chunk.js.LICENSE.txt": "/SocialMediaPetProject/static/js/2.452eeffe.chunk.js.LICENSE.txt",
+    "static/media/829.20951e82.gif": "/SocialMediaPetProject/static/media/829.20951e82.gif",
+    "static/media/profile-02-512.8bda664b.png": "/SocialMediaPetProject/static/media/profile-02-512.8bda664b.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.d900cea3.js",
+    "static/js/runtime-main.04aa4ec8.js",
     "static/js/2.452eeffe.chunk.js",
     "static/css/main.06948247.chunk.css",
     "static/js/main.02cd7e23.chunk.js"
