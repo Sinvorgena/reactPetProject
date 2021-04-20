@@ -1,5 +1,4 @@
-import MainScreen from "./MainScreen/MainScreen"
-import UserProfile from "./UserProfile/UserProfile";
+import MainScreen from "./MainScreen"
 import Posts from "./Posts/Posts";
 import s from "./Profile.module.css"
 import UserProfileContainer from "./UserProfile/UserProfileContainer";

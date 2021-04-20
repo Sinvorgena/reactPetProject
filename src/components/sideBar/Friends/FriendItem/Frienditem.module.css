@@ -8,6 +8,12 @@
     background-color: #9E7B9B;
     margin: auto;
 }
+.avatar img{
+    object-fit: cover;
+    width: 100%;
+    border-radius: 50%;
+    height: 100%;
+}
 .name{
     font-size: 18px;
     text-align: center;

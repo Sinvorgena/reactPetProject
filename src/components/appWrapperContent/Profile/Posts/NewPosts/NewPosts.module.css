@@ -11,19 +11,20 @@
 }
 .textField{
     grid-area: in;
-    resize: none;
-    overflow: hidden;
-    max-height: 100px;
-    min-height: 60px;
-    font-size: 22px;
-    background-color: #F3E4E4;
     color: #374A67;
     border: none;
-    box-shadow: 0 0 1px 1px #374A67;
-    border-radius: 5px;
     padding: 5px;
 }
-.textField:focus{
+.textarea{
+    font-size: 22px;
+    resize: none;
+    overflow: hidden;
+    box-shadow: 0 0 1px 1px #374A67;
+    width: 99%;
+    height: 100%;
+    border-radius: 5px;
+}
+.textarea:focus{
     outline: none;
 }
 .textFieldLabel{

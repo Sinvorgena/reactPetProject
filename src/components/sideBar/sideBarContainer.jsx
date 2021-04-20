@@ -5,7 +5,6 @@ import sideBar from "./sideBar";
 
 const mapStateToProps = (state)=>{
     return{
-        friendData: state.sideBar.friendData
     }
 }
 const mapDispatchToProps = (dispatch) =>{

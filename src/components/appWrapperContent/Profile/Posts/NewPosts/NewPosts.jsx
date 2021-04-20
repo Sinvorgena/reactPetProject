@@ -1,37 +1,38 @@
 import s from "./NewPosts.module.css"
 import React from "react";
+import {Field, reduxForm} from "redux-form";
+import {maxLegthCreator, required} from "../../../../../utils/validators/validator";
+import {Textarea} from "../../../../common/FormsControls/FormControl";
 
-
-
-let NewPosts = (props) => {
-    let newPostElement = React.createRef()
-
-    let niceScroll = (e) => {
-        e.target.style.height = "5px"
-        e.target.style.height = e.target.scrollHeight + "px"
-    }
-    let newTextPost = () => {
-        props.newTextPost(newPostElement.current.value)
-    }
+let maxLength10 = maxLegthCreator(10)
+let NewPostsForm = (props) => {
 
     return (
-        <form className={s.form}>
+        <form className={s.form} onSubmit={props.handleSubmit}>
             <label
                 htmlFor={"textFieldId"}
                 className={s.textFieldLabel}>My posts</label>
 
-            <textarea className={s.textField}
-                      placeholder={"your news..."}
-                      onInput={niceScroll}
-                      ref={newPostElement}
-                      onChange={newTextPost}
-                      value={props.newPostText}
-                      id={"textFieldId"}/>
-
-            <button className={s.sendBtn}
-                    type={"button"}
-                    onClick={props.addPost}>Send</button>
+            <div className={s.textField}>
+                <Field className={s.textarea}
+                        placeholder={"your news..."}
+                        name={"postText"}
+                        id={"textFieldId"} component={Textarea}
+                        validate={[required, maxLength10]}/></div>
+            <button className={s.sendBtn}>Send</button>
         </form>
+    )
+}
+let NewPostsReduxForm = reduxForm({
+    form: "newPost"
+})(NewPostsForm)
+
+let NewPosts = (props) => {
+    let onSubmit = (formData) => {
+        props.addPost(formData.postText)
+    }
+    return (
+        <NewPostsReduxForm onSubmit={onSubmit} {...props}/>
     )
 }
 

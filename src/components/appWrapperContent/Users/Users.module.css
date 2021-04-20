@@ -194,6 +194,12 @@
     top: 3px;
     transition: all 0.1s;
 }
+.ToogleFollowBtn:disabled{
+    opacity: 0.3;
+}
+.ToogleFollowBtn:disabled:active{
+    top:0;
+}
 .userInfo{
     border-radius: 10px;
     border: 1px solid black;
@@ -224,5 +230,8 @@
     background-color: white;
     color: #374A67;
     border: 1px solid #9E7B9B;
+}
+.follow:disabled{
+    border: none;
 }
 

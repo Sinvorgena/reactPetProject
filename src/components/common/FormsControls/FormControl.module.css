@@ -1,0 +1,11 @@
+.textFieldBox .error{
+    box-shadow: 0 0 1px 1px red;
+}
+.textFieldBox span{
+  color: red;
+}
+.allFormError{
+    border: 1px solid red;
+    color: red;
+    padding: 5px 10px;
+}

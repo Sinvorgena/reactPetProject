@@ -1,5 +1,4 @@
 let addMessage = "ADD-MESSAGE"
-let updNewMessageText = "UPD-NEW-MESSAGE-TEXT"
 
 let DialogsDefaulState = {
     messageData: [
@@ -28,7 +27,6 @@ let DialogsDefaulState = {
         {id: 4, name: "Anya"},
         {id: 5, name: "Zina"}
     ],
-    newMessageText: ""
 }
 
 export const DialogsReducer = (state = DialogsDefaulState, action) => {
@@ -36,20 +34,12 @@ export const DialogsReducer = (state = DialogsDefaulState, action) => {
     switch (action.type) {
         case addMessage:
             let newMessage = {
-                message: state.newMessageText,
+                message: action.text,
                 avatar: "https://cdnimg.rg.ru/img/content/187/94/47/iStock-644032024_d_850.jpg"
             }
             copyOfState = {
                 ...state,
-                messageData: [...state.messageData, newMessage],
-                newMessageText: "",
-            }
-            return copyOfState
-
-        case updNewMessageText:
-            copyOfState = {
-                ...state,
-                newMessageText: (action.userText)
+                messageData: [...state.messageData, newMessage]
             }
             return copyOfState
     }
@@ -58,9 +48,5 @@ export const DialogsReducer = (state = DialogsDefaulState, action) => {
 
 export let addMessageActionCreator = (text) => ({
     type: addMessage,
-    userText: text
-})
-export let updNewMessageTextActionCreator = (text) => ({
-    type: updNewMessageText,
-    userText: text
+    text
 })

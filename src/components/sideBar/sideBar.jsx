@@ -22,7 +22,7 @@ const SideBar = (props) => {
                 <NavLink activeClassName={s.active} to="/setting">Settings</NavLink>
             </div>
 
-            <Friends friendData={props.friendData}/>
+            <Friends/>
             <div className={s.box}>
                 <NavLink activeClassName={s.active} to="/users">Find users</NavLink>
             </div>

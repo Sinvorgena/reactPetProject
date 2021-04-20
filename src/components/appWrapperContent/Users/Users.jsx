@@ -1,7 +1,7 @@
 import React from "react";
 import s from "./Users.module.css";
 import userAvatar from "../../../assets/profile-02-512.png";
-
+import {NavLink} from "react-router-dom";
 
 let Users = (props) => {
     return (
@@ -12,20 +12,19 @@ let Users = (props) => {
                     {props.usersData.map(el =>
                         <div className={s.item}>
                             <div className={s.avatar}>
-                                <img src={el.photos.small != null ? el.photos.small : userAvatar} alt=""/>
+                                <NavLink onClick={()=>{props.setAnotherUserIdSucsess(el.id)}} to={`/profile/${el.id}`}>
+                                    <img src={el.photos.small != null ?
+                                        el.photos.small : userAvatar} alt=""/>
+                                </NavLink>
                             </div>
                             <div className={s.ToogleFollowbox}>
-                                <button
-                                    className={el.followed ?
-                                        `${s.ToogleFollowBtn + " " + s.follow}` :
-                                        `${s.ToogleFollowBtn + " " + s.unfollow}`}
-                                    onClick={(e) => {
-                                        if (el.followed) {
-                                            props.unfollow(el.id)
-                                        } else {
-                                            props.follow(el.id)
-                                        }
-                                    }}>
+                                <button disabled={props.usersInProgressFollowing.some(id => id == el.id)}
+                                        className={el.followed ?
+                                            `${s.ToogleFollowBtn + " " + s.follow}` :
+                                            `${s.ToogleFollowBtn + " " + s.unfollow}`}
+                                        onClick={(e) => {
+                                            props.toogleFollowStatus(el)
+                                        }}>
                                     {el.followed ? <span>Unfollow</span>
                                         : <span>Follow</span>}
                                 </button>
@@ -41,24 +40,27 @@ let Users = (props) => {
             </div>
             <div className={s.paginnatorBox}>
                 <div className={s.goLeftPage}>
-                    {props.currentPage===1?<button disabled className={s.MaxToLeft} onClick={() => {
-                        props.setCurrentPage(1)
-                        props.getUsers()
-                    }}><span></span></button>:<button className={s.MaxToLeft} onClick={() => {
-                        props.setCurrentPage(1)
-                        props.getUsers()
-                    }}><span></span></button>}
-                    {props.currentPage===1?<button disabled className={s.OneToLeft} onClick={() => {
-                        if (props.currentPage > 1) {
-                            props.setCurrentPage(props.currentPage - 1)
+                    {props.currentPage === 1 ?
+                        <button disabled={props.isLoading} className={s.MaxToLeft} onClick={() => {
+                            props.setCurrentPage(1)
                             props.getUsers()
-                        }
-                    }}></button>:<button className={s.OneToLeft} onClick={() => {
-                        if (props.currentPage > 1) {
-                            props.setCurrentPage(props.currentPage - 1)
+                        }}><span></span></button> :
+                        <button disabled={props.isLoading} className={s.MaxToLeft} onClick={() => {
+                            props.setCurrentPage(1)
                             props.getUsers()
-                        }
-                    }}></button>}
+                        }}><span></span></button>}
+                    {props.currentPage === 1 ?
+                        <button disabled={props.isLoading} className={s.OneToLeft} onClick={() => {
+                            if (props.currentPage > 1) {
+                                props.setCurrentPage(props.currentPage - 1)
+                                props.getUsers()
+                            }
+                        }}></button> : <button className={s.OneToLeft} disabled={props.isLoading} onClick={() => {
+                            if (props.currentPage > 1) {
+                                props.setCurrentPage(props.currentPage - 1)
+                                props.getUsers()
+                            }
+                        }}></button>}
 
                 </div>
                 <div className={s.pagesBox}>
@@ -75,46 +77,44 @@ let Users = (props) => {
                     </span>
                 </div>
                 <div className={s.goRigthPage}>
-                    {props.currentPage===props.numberOfPages ?
-                        <button disabled className={s.OneToRigth}
+                    {props.currentPage === props.numberOfPages ?
+                        <button disabled={props.isLoading} className={s.OneToRigth}
                                 onClick={() => {
-                        if(props.currentPage < props.numberOfPages){
-                            props.setCurrentPage(props.currentPage + 1)
-                            props.getUsers()
-                        }
-                    }}>
+                                    if (props.currentPage < props.numberOfPages) {
+                                        props.setCurrentPage(props.currentPage + 1)
+                                        props.getUsers()
+                                    }
+                                }}>
 
-                        </button>:
-                        <button  className={s.OneToRigth}
-                                 onClick={() => {
-                            if(props.currentPage < props.numberOfPages){
-                                props.setCurrentPage(props.currentPage + 1)
-                                props.getUsers()
-                            }
-                        }}>
+                        </button> :
+                        <button className={s.OneToRigth} disabled={props.isLoading}
+                                onClick={() => {
+                                    if (props.currentPage < props.numberOfPages) {
+                                        props.setCurrentPage(props.currentPage + 1)
+                                        props.getUsers()
+                                    }
+                                }}>
 
                         </button>
                     }
-                    {props.currentPage===props.numberOfPages ?
-                        <button disabled className={s.MaxToRigth}
+                    {props.currentPage === props.numberOfPages ?
+                        <button disabled className={s.MaxToRigth} disabled={props.isLoading}
                                 onClick={() => {
-                        props.setCurrentPage(props.numberOfPages)
-                        props.getUsers()
-                    }}>
-                        <span></span>
-                    </button> :
-                        <button className={s.MaxToRigth} onClick={() => {
+                                    props.setCurrentPage(props.numberOfPages)
+                                    props.getUsers()
+                                }}>
+                            <span></span>
+                        </button> :
+                        <button className={s.MaxToRigth} disabled={props.isLoading} onClick={() => {
                             props.setCurrentPage(props.numberOfPages)
                             props.getUsers()
                         }}>
-                        <span></span>
-                    </button>}
+                            <span></span>
+                        </button>}
                 </div>
             </div>
         </div>
     )
-
-
 }
 
 export default Users;
