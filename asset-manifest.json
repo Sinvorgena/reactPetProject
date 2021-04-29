@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/reactPetProject/static/css/main.ae5e6bee.chunk.css",
-    "main.js": "/reactPetProject/static/js/main.e26396b6.chunk.js",
-    "main.js.map": "/reactPetProject/static/js/main.e26396b6.chunk.js.map",
-    "runtime-main.js": "/reactPetProject/static/js/runtime-main.c0a86e3a.js",
-    "runtime-main.js.map": "/reactPetProject/static/js/runtime-main.c0a86e3a.js.map",
+    "main.js": "/reactPetProject/static/js/main.1e7d3bac.chunk.js",
+    "main.js.map": "/reactPetProject/static/js/main.1e7d3bac.chunk.js.map",
+    "runtime-main.js": "/reactPetProject/static/js/runtime-main.18d95674.js",
+    "runtime-main.js.map": "/reactPetProject/static/js/runtime-main.18d95674.js.map",
     "static/js/2.7c1c9079.chunk.js": "/reactPetProject/static/js/2.7c1c9079.chunk.js",
     "static/js/2.7c1c9079.chunk.js.map": "/reactPetProject/static/js/2.7c1c9079.chunk.js.map",
     "static/css/3.d997a547.chunk.css": "/reactPetProject/static/css/3.d997a547.chunk.css",
-    "static/js/3.1f9aac8e.chunk.js": "/reactPetProject/static/js/3.1f9aac8e.chunk.js",
-    "static/js/3.1f9aac8e.chunk.js.map": "/reactPetProject/static/js/3.1f9aac8e.chunk.js.map",
+    "static/js/3.2fd02456.chunk.js": "/reactPetProject/static/js/3.2fd02456.chunk.js",
+    "static/js/3.2fd02456.chunk.js.map": "/reactPetProject/static/js/3.2fd02456.chunk.js.map",
     "static/css/4.e56e849c.chunk.css": "/reactPetProject/static/css/4.e56e849c.chunk.css",
-    "static/js/4.31411b2b.chunk.js": "/reactPetProject/static/js/4.31411b2b.chunk.js",
-    "static/js/4.31411b2b.chunk.js.map": "/reactPetProject/static/js/4.31411b2b.chunk.js.map",
+    "static/js/4.48b259e4.chunk.js": "/reactPetProject/static/js/4.48b259e4.chunk.js",
+    "static/js/4.48b259e4.chunk.js.map": "/reactPetProject/static/js/4.48b259e4.chunk.js.map",
     "static/css/5.e619e62d.chunk.css": "/reactPetProject/static/css/5.e619e62d.chunk.css",
     "static/js/5.693a6a6d.chunk.js": "/reactPetProject/static/js/5.693a6a6d.chunk.js",
     "static/js/5.693a6a6d.chunk.js.map": "/reactPetProject/static/js/5.693a6a6d.chunk.js.map",
@@ -28,9 +28,9 @@
     "static/media/profile-02-512.png": "/reactPetProject/static/media/profile-02-512.8bda664b.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.c0a86e3a.js",
+    "static/js/runtime-main.18d95674.js",
     "static/js/2.7c1c9079.chunk.js",
     "static/css/main.ae5e6bee.chunk.css",
-    "static/js/main.e26396b6.chunk.js"
+    "static/js/main.1e7d3bac.chunk.js"
   ]
 }
