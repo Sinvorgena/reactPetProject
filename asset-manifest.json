@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/reactPetProject/static/css/main.ae5e6bee.chunk.css",
-    "main.js": "/reactPetProject/static/js/main.21a6380f.chunk.js",
-    "main.js.map": "/reactPetProject/static/js/main.21a6380f.chunk.js.map",
+    "main.js": "/reactPetProject/static/js/main.ce645ecf.chunk.js",
+    "main.js.map": "/reactPetProject/static/js/main.ce645ecf.chunk.js.map",
     "runtime-main.js": "/reactPetProject/static/js/runtime-main.3d2cde0a.js",
     "runtime-main.js.map": "/reactPetProject/static/js/runtime-main.3d2cde0a.js.map",
     "static/js/2.7a93d2c1.chunk.js": "/reactPetProject/static/js/2.7a93d2c1.chunk.js",
@@ -31,6 +31,6 @@
     "static/js/runtime-main.3d2cde0a.js",
     "static/js/2.7a93d2c1.chunk.js",
     "static/css/main.ae5e6bee.chunk.css",
-    "static/js/main.21a6380f.chunk.js"
+    "static/js/main.ce645ecf.chunk.js"
   ]
 }
