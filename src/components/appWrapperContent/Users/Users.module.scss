@@ -1,0 +1,92 @@
+.UsersField{
+    width: 80%;
+    margin: 0 auto 0 3%;
+}
+.UsersPage{
+    padding: 20px 20px 0 20px;
+    height: 96%;
+    display: grid;
+    grid-template-rows: 0.05fr 0.90fr 0.05fr;
+
+}
+.avatar{
+    grid-area: avatar;
+    margin: 0 auto;
+}
+.avatar img{
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.item{
+    grid-gap: 0 10px;
+    display: grid;
+    grid-template-rows: 0.8fr 0.2fr;
+    grid-template-columns: 0.1fr 0.9fr;
+    grid-template-areas: "avatar info"
+                         "flbutton info";
+    margin: 20px 0 20px 0;
+}
+.ToggleFollowBtn{
+    grid-area: flbutton;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    color: white;
+    background-color: #9E7B9B;
+    outline: none;
+    border: none;
+    border-radius: 2px;
+    top:0;
+    position: relative;
+    transition: all 0.1s;
+}
+.ToggleFollowBtn:active{
+    outline: none;
+    border: none;
+    position: relative;
+    top: 3px;
+    transition: all 0.1s;
+}
+.ToggleFollowBtn:disabled{
+    opacity: 0.3;
+}
+.ToggleFollowBtn:disabled:active{
+    top:0;
+}
+.userInfo{
+    border-radius: 10px;
+    border: 1px solid black;
+    grid-area: info;
+    padding: 10px;
+    grid-gap: 30px 0;
+    display: grid;
+    grid-template-columns: 0.9fr 0.1fr;
+    grid-template-rows: 0.7fr 0.3fr;
+    grid-template-areas: "fullname country"
+                         "status city";
+}
+.fullName{
+    grid-area: fullname;
+}
+.status{
+    grid-area: status;
+}
+.country{
+    grid-area: country;
+}.city{
+     grid-area: city;
+ }
+.unfollow{
+    background-color: #9E7B9B;
+}
+.follow{
+    background-color: white;
+    color: #374A67;
+    border: 1px solid #9E7B9B;
+}
+.follow:disabled{
+    border: none;
+}
+

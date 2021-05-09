@@ -1,37 +1,24 @@
-import {Redirect, withRouter} from "react-router-dom";
+import {Redirect} from "react-router-dom";
 import Preloader from "../components/Preloader/Preloader";
-import Profile from "../components/appWrapperContent/Profile/Profile";
 import React from "react";
-import {connect} from "react-redux";
+import {useSelector} from "react-redux";
+import {getIsAuth_selector, getIsLoading_selector} from "../Selectors/Selectors";
 
-
-
-const mapStateToProps = (state)=>{
-    return{
-        isAuth: state.auth.isAuth,
-        isLoading: state.Users.isLoading,
-        anotherUserId: state.auth.anotherUserId
-    }
-}
-
-let withAuthRedirect = (Component)=> {
-    class RedirectComponent extends React.Component {
-        render() {
-            if ((!this.props.isAuth && this.props.anotherUserId == null) || (!this.props.isAuth && Component == "Dialogs")) {
-                return <Redirect to={'/login'}/>
-            }
-            return (
-                <>
-                    {this.props.isLoading ? <Preloader/> : ""}
-                    <Component {...this.props}/>
-                </>
-            )
+let withAuthRedirect = (Component) => {
+    let RedirectComponent = (props) => {
+        let isAuth = useSelector(state => getIsAuth_selector(state))
+        let isLoading = useSelector(state => getIsLoading_selector(state))
+        if ((!isAuth) || (!isAuth && Component == "Dialogs")) {
+            return <Redirect to={'/login'}/>
         }
-
+        return (
+            <>
+                {isLoading ? <Preloader/> : ""}
+                <Component {...props}/>
+            </>
+        )
     }
-
-    return connect(mapStateToProps, {})(RedirectComponent);
-
+    return RedirectComponent;
 }
 
 export default (withAuthRedirect);

@@ -1,67 +1,67 @@
 import './App.css';
 import Footer from "./components/Footer/Footer";
-import {Route, withRouter} from "react-router-dom";
+import {Redirect, Route, withRouter, Switch} from "react-router-dom";
 import News from "./components/appWrapperContent/News/News";
 import Music from "./components/appWrapperContent/Music/Music";
 import Setting from "./components/appWrapperContent/Setting/Setting";
-import DialogsContainer from "./components/appWrapperContent/Dialogs/DialogsContainer";
-import UsersContainer from "./components/appWrapperContent/Users/UsersContainer";
-import SideBarContainer from "./components/sideBar/sideBarContainer";
-import ProfileContainer from "./components/appWrapperContent/Profile/ProfileContainer";
-import HeaderContainer from "./components/Header/HeaderContainer";
-import Login from "./components/appWrapperContent/Login";
-import {Component} from "react";
-import {compose} from "redux";
-import {connect} from "react-redux";
-import {setInitialized} from "./redux/appReducer";
+import SideBar from "./components/sideBar/sideBar";
+// import Login from "./components/appWrapperContent/Login";
+import {useEffect} from "react";
+import {useDispatch, useSelector} from "react-redux";
+import React from "react";
+import {setInitialized_thunkC} from "./redux/appReducer";
 import Preloader from "./components/Preloader/Preloader";
-import {getInitialized} from "./Selectors/Selectors";
+import {getInitialized_selector} from "./Selectors/Selectors";
+import Header from "./components/Header/Header";
+import Login from "./components/appWrapperContent/Login";
 
 
-class App extends Component {
-    componentDidMount() {
-        this.props.setInitialized()
+const Dialogs = React.lazy(() => import('./components/appWrapperContent/Dialogs/Dialogs'));
+const Users = React.lazy(() => import('./components/appWrapperContent/Users/Users'));
+const Profile = React.lazy(() => import('./components/appWrapperContent/Profile/Profile.tsx'));
+
+
+let App = (props) => {
+    let initialized = useSelector(state => getInitialized_selector(state))
+    let dispatch = useDispatch()
+    useEffect(() => {
+        dispatch(setInitialized_thunkC())
+    }, [])
+    if (initialized) {
+        return <Preloader/>
     }
-
-    render() {
-        if(!this.props.initialized){
-            return <Preloader/>
-        }
-        return (
-            <div className="appWrapper">
-                <HeaderContainer/>
-                <SideBarContainer/>
-                <div className="appWrapperContent">
-                    <Route path={"/profile/:userId?"} render={() =>
-                        <ProfileContainer/>}
-                    />
-                    <Route path={"/dialogs"} render={() =>
-                        <DialogsContainer/>}
-                    />
-                    <Route path={"/users"} render={() =>
-                        <UsersContainer/>}
-                    />
-                    <Route path={"/feed"} render={() => <News/>}/>
-                    <Route path={"/music"} render={() => <Music/>}/>
-                    <Route path={"/setting"} render={() => <Setting/>}/>
-                    <Route path={"/login"} render={() => <Login/>}/>
-                </div>
-                <Footer/>
+    return (
+        <div className="appWrapper">
+            <Header/>
+            <SideBar/>
+            <div className="appWrapperContent">
+                <React.Suspense fallback={<Preloader/>}>
+                    <Switch>
+                        <Redirect exact from="/" to="/profile"/>
+                        <Route path={"/profile/:userId?"} render={() =>
+                            <Profile/>}
+                        />
+                        <Route path={"/dialogs"} render={() =>
+                            <Dialogs/>}
+                        />
+                        <Route path={"/users"} render={() =>
+                            <Users/>}
+                        />
+                        <Route path={"/feed"} render={() => <News/>}/>
+                        <Route path={"/music"} render={() => <Music/>}/>
+                        <Route path={"/setting"} render={() => <Setting/>}/>
+                        <Route path={"/login"} render={() => <Login/>}/>
+                        <Route path={"*"} render={() => <div>404 NOT FOUND</div>}/>
+                    </Switch>
+                </React.Suspense>
             </div>
-        )
-    }
+            <Footer/>
+        </div>
+    )
 }
 
-let mapStateToProps = state => {
-    return {
-        initialized: getInitialized(state)
-    }
-}
 
-export default compose(
-    withRouter,
-    connect(mapStateToProps, {setInitialized})
-)(App);
+export default withRouter(App);
 
 
 

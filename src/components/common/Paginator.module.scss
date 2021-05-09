@@ -1,0 +1,25 @@
+.paginnatorBox{
+
+  height: 70px;
+  & .div{
+    border: 1px solid red;
+  }
+}
+
+.btn{
+  border: none;
+  background: white;
+  border-radius: 50%;
+  height: 55px;
+  width: 55px;
+  font-size: 18px;
+}
+.selectedBtn{
+  color: white;
+  background: #9E7B9B;
+}
+.toolBtn{
+  background: white;
+  border: none;
+  font-size: 16px;
+}

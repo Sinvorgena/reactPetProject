@@ -1,0 +1,13 @@
+.content{
+
+    border-radius: 10px;
+    display: grid;
+    grid-template-rows: 150px auto 1fr;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+    height: 100%;
+    grid-template-areas:
+          "ms"
+          "up"
+          "pr";
+}

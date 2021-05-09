@@ -1,0 +1,28 @@
+.content{
+    display: grid;
+    grid-template-rows: 30px auto 2fr;
+    grid-gap: 5px;
+    grid-template-areas: "name"
+                        "status"
+                        "info";
+}
+.name{
+    font-size: 26px;
+    grid-area: name;
+}
+.status{
+    gap: 0;
+    margin: 0;
+    grid-area: status;
+}
+.status div{
+    gap: 0;
+    margin: 0;
+}
+.info{
+    font-size: 18px;
+    grid-area: info;
+}
+.contactFields{
+    margin: 0 0 0 50px;
+}
